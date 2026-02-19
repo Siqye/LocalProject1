@@ -5,6 +5,9 @@
 #include "src/maths/maths.h"
 #include "src/graphics/shaders.h"
 
+#define TRUE 1
+
+
 #include "src/graphics/buffers/vertexbuffer.h"
 #include "src/graphics/buffers/indexbuffer.h"
 #include "src/graphics/buffers/vertexarray.h"

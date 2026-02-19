@@ -1,0 +1,7 @@
+﻿  main.cpp
+  simplerenderer2d.cpp
+  window.cpp
+C:\Users\HP\source\repos\LocalProject1\LocalProject1\src\graphics\window.cpp(91,22): warning C4804: >: небезопасное использование типа "bool" в операции
+C:\Users\HP\source\repos\LocalProject1\LocalProject1\src\graphics\window.cpp(96,29): warning C4804: >: небезопасное использование типа "bool" в операции
+  Создание кода...
+  LocalProject1.vcxproj -> C:\Users\HP\source\repos\LocalProject1\x64\Debug\LocalProject1.exe

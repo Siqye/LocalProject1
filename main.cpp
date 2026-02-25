@@ -5,9 +5,6 @@
 #include "src/maths/maths.h"
 #include "src/graphics/shaders.h"
 
-#define TRUE 1
-
-
 #include "src/graphics/buffers/vertexbuffer.h"
 #include "src/graphics/buffers/indexbuffer.h"
 #include "src/graphics/buffers/vertexarray.h"
@@ -32,7 +29,11 @@ int main(int argc, char* argv[]) {
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 
     Shader shader("src/shaders/basic.vert", "src/shaders/basic.frag");
-    Renderable2D sprite(vec3(0.0f, 0.0f, 0.0f), vec2(1.0f, 1.0f), vec4(1.0f, 0.0f, 1.0f, 1.0f),&shader);
+    Renderable2D sprite(vec3(3.0f, 1.0f, 0.0f), vec2(1.0f, 1.0f), vec4(1.0f, 0.0f, 1.0f, 1.0f),&shader);
+
+    shader.setUniform2f("light_pos", vec2(0.3f,0.1f));
+
+    shader.setUniform4f("colour", vec4(0.4f, 0.0f, 0.0f, 0.0f));
 
     Simple2DRenderer renderer;
 
@@ -41,7 +42,6 @@ int main(int argc, char* argv[]) {
     while (!window.closed()) {
         renderer.submit(&sprite);
         renderer.flush();
-
         
         window.update();
     }

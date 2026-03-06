@@ -1,7 +1,7 @@
 #pragma once
 #include "glad/glad.h"
 #include "../maths/maths.h"
-#include "renderable2d.h"
+#include "constsprite.h"
 
 namespace LocalProject1 {
 	namespace graphics {

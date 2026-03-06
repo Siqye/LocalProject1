@@ -1,9 +1,16 @@
 #version 330 core
-out vec4 FragColor;
+out vec4 fragColor;
   
-in vec4 vertexColor;
+uniform vec2 light_pos;
+
+in DATA 
+{
+    vec4 position;
+    vec4 color;
+} vs_in;
 
 void main()
 {
-    FragColor = vertexColor;
-} 
+    float intensity = 0.01f / length(vs_in.position.xy + light_pos);
+    fragColor = vs_in.color * intensity;
+}

@@ -4,25 +4,22 @@ namespace LocalProject1 {
 	namespace graphics {
 		
 		void Simple2DRenderer::submit(const Renderable2D* renderable) {
-			m_RenderQueue.push_back(renderable);
+			m_RenderQueue.push_back((const ConstSprite*)renderable);
 		}
 		void Simple2DRenderer::flush() {
 			while (!m_RenderQueue.empty()) {
-				const Renderable2D* renderable = m_RenderQueue.front();
+				const ConstSprite* sprite = m_RenderQueue.front();
+
+				sprite->getVAO()->bind();
+				sprite->getIBO()->bind();
 				
+				sprite->getShader()->setUniformMat4f("ml_matrix", maths::mat4::translation(sprite->getPosition()));
 
-				glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+				glDrawElements(GL_TRIANGLES, sprite->getIBO()->getCount(), GL_UNSIGNED_SHORT, 0);
 
-				renderable->getVAO()->bind();
-				renderable->getIBO()->bind();
+				sprite->getIBO()->unbind();
+				sprite->getVAO()->unbind();
 				
-				renderable->getShader()->setUniformMat4f("ml_matrix", maths::mat4::translation(renderable->getPosition()));
-
-				glDrawElements(GL_TRIANGLES,renderable->getIBO()->getCount(), GL_UNSIGNED_INT, 0);
-
-				renderable->getIBO()->unbind();
-				renderable->getVAO()->unbind();
-
 				m_RenderQueue.pop_front();
 			}
 

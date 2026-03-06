@@ -73,10 +73,8 @@ namespace LocalProject1
 
 			glViewport(0, 0, m_Width, m_Height);
 
-			// ¬ключаем базовые состо€ни€ (по необходимости)
-			glEnable(GL_DEPTH_TEST);
-
-			
+			/*glEnable(GL_DEPTH_TEST);*/ /*не забудь включить если надо будет*/
+			SDL_GL_SetSwapInterval(1);
 
 			if (!SDL_GetError() == NULL)
 				std::cout << "Success!" << std::endl;

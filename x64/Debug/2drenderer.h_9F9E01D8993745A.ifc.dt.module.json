@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "x64\\Debug\\2drenderer.obj",
+            "outputs": [
+                "x64\\Debug\\2drenderer.h_9F9E01D8993745A.ifc.dt.module.json",
+                "x64\\Debug\\2drenderer.h_9F9E01D8993745A.ifc.dt.d.json",
+                "x64\\Debug\\2drenderer.h.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "C:\\Users\\HP\\source\\repos\\LocalProject1\\LocalProject1\\src\\graphics\\2drenderer.h",
+                    "source-path": "c:\\users\\hp\\source\\repos\\localproject1\\localproject1\\src\\graphics\\2drenderer.h",
+                    "lookup-method": "absolute"
+                }
+            ],
+            "requires": []
+        }
+    ]
+}

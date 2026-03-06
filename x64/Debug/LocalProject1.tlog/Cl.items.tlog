@@ -1,10 +1,14 @@
 C:\Users\HP\source\repos\LocalProject1\Dependensis\glad\src\glad.c;C:\Users\HP\source\repos\LocalProject1\LocalProject1\x64\Debug\glad.obj
 C:\Users\HP\source\repos\LocalProject1\LocalProject1\main.cpp;C:\Users\HP\source\repos\LocalProject1\LocalProject1\x64\Debug\main.obj
+C:\Users\HP\source\repos\LocalProject1\LocalProject1\src\graphics\constsprite.cpp;C:\Users\HP\source\repos\LocalProject1\LocalProject1\x64\Debug\constsprite.obj
+C:\Users\HP\source\repos\LocalProject1\LocalProject1\src\graphics\packed2drenderer.cpp;C:\Users\HP\source\repos\LocalProject1\LocalProject1\x64\Debug\packed2drenderer.obj
+C:\Users\HP\source\repos\LocalProject1\LocalProject1\src\graphics\packed2drenderer.h;C:\Users\HP\source\repos\LocalProject1\LocalProject1\x64\Debug\packed2drenderer.h.obj
 C:\Users\HP\source\repos\LocalProject1\LocalProject1\src\graphics\buffers\indexbuffer.cpp;C:\Users\HP\source\repos\LocalProject1\LocalProject1\x64\Debug\indexbuffer.obj
 C:\Users\HP\source\repos\LocalProject1\LocalProject1\src\graphics\buffers\vertexarray.cpp;C:\Users\HP\source\repos\LocalProject1\LocalProject1\x64\Debug\vertexarray.obj
 C:\Users\HP\source\repos\LocalProject1\LocalProject1\src\graphics\buffers\vertexbuffer.cpp;C:\Users\HP\source\repos\LocalProject1\LocalProject1\x64\Debug\vertexbuffer.obj
 C:\Users\HP\source\repos\LocalProject1\LocalProject1\src\graphics\simplerenderer2d.cpp;C:\Users\HP\source\repos\LocalProject1\LocalProject1\x64\Debug\simplerenderer2d.obj
 C:\Users\HP\source\repos\LocalProject1\LocalProject1\src\graphics\shaders.cpp;C:\Users\HP\source\repos\LocalProject1\LocalProject1\x64\Debug\shaders.obj
+C:\Users\HP\source\repos\LocalProject1\LocalProject1\src\graphics\sprite.cpp;C:\Users\HP\source\repos\LocalProject1\LocalProject1\x64\Debug\sprite.obj
 C:\Users\HP\source\repos\LocalProject1\LocalProject1\src\maths\mat4.cpp;C:\Users\HP\source\repos\LocalProject1\LocalProject1\x64\Debug\mat4.obj
 C:\Users\HP\source\repos\LocalProject1\LocalProject1\src\maths\vec2.cpp;C:\Users\HP\source\repos\LocalProject1\LocalProject1\x64\Debug\vec2.obj
 C:\Users\HP\source\repos\LocalProject1\LocalProject1\src\maths\vec3.cpp;C:\Users\HP\source\repos\LocalProject1\LocalProject1\x64\Debug\vec3.obj

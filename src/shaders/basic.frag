@@ -11,6 +11,6 @@ in DATA
 
 void main()
 {
-    float intensity = 0.01f / length(vs_in.position.xy + light_pos);
+    float intensity = 0.3f / length(vs_in.position.xy + light_pos);
     fragColor = vs_in.color * intensity;
 }

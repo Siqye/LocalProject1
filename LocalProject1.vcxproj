@@ -73,6 +73,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>C:\Users\HP\source\repos\LocalProject1\Dependensis\glad\include;C:\Users\HP\source\repos\LocalProject1\Dependensis\SDL\include;$(IncludePath)</IncludePath>
     <ExternalIncludePath>C:\Users\HP\Documents\Libreries\SDL\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <LibraryPath>C:\Users\HP\Documents\Libreries\SDL\lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LibraryPath>C:\Users\HP\Documents\Libreries\SDL\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\HP\source\repos\LocalProject1\Dependensis\glad\include;C:\Users\HP\source\repos\LocalProject1\Dependensis\SDL\include;$(IncludePath)</IncludePath>
+    <ExternalIncludePath>C:\Users\HP\Documents\Libreries\SDL\include;$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -127,20 +133,28 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>C:\Users\HP\Documents\Libreries\SDL\lib\x64\SDL3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Dependensis\glad\src\glad.c" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\graphics\constsprite.cpp" />
+    <ClCompile Include="src\graphics\packed2drenderer.cpp" />
+    <ClCompile Include="src\graphics\packed2drenderer.h" />
     <ClCompile Include="src\graphics\buffers\indexbuffer.cpp" />
     <ClCompile Include="src\graphics\buffers\vertexarray.cpp" />
     <ClCompile Include="src\graphics\buffers\vertexbuffer.cpp" />
     <ClCompile Include="src\graphics\simplerenderer2d.cpp" />
     <ClCompile Include="src\graphics\shaders.cpp" />
+    <ClCompile Include="src\graphics\sprite.cpp" />
     <ClCompile Include="src\maths\mat4.cpp" />
     <ClCompile Include="src\maths\vec2.cpp" />
     <ClCompile Include="src\maths\vec3.cpp" />
@@ -152,10 +166,12 @@
     <ClInclude Include="src\graphics\buffers\indexbuffer.h" />
     <ClInclude Include="src\graphics\buffers\vertexarray.h" />
     <ClInclude Include="src\graphics\buffers\vertexbuffer.h" />
+    <ClInclude Include="src\graphics\constsprite.h" />
     <ClInclude Include="src\graphics\renderable2d.h" />
     <ClInclude Include="src\graphics\renderer2d.h" />
     <ClInclude Include="src\graphics\shaders.h" />
     <ClInclude Include="src\graphics\simplerenderer2d.h" />
+    <ClInclude Include="src\graphics\sprite.h" />
     <ClInclude Include="src\maths\mat4.h" />
     <ClInclude Include="src\maths\maths.h" />
     <ClInclude Include="src\maths\vec2.h" />
@@ -163,8 +179,11 @@
     <ClInclude Include="src\graphics\window.h" />
     <ClInclude Include="src\maths\vec4.h" />
     <ClInclude Include="src\utils\file_utils.h" />
+    <ClInclude Include="src\utils\timer.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="README.md" />
+    <None Include="SDL3.dll" />
     <None Include="src\shaders\basic.frag" />
     <None Include="src\shaders\basic.vert" />
   </ItemGroup>

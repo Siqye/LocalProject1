@@ -18,8 +18,8 @@ namespace LocalProject1 {
 			glBindBuffer(GL_ARRAY_BUFFER,m_VBO);
 
 			glBufferData(GL_ARRAY_BUFFER, BUFFER_SIZE, NULL, GL_DYNAMIC_DRAW);
-			glVertexAttribPointer(VERTEX_INDEX,3,GL_FLOAT,GL_FALSE,VERTEX_SIZE,(const GLvoid*)0);
-			glVertexAttribPointer(COLOR_INDEX, 4, GL_FLOAT, GL_FALSE, VERTEX_SIZE, (const GLvoid*)(3*sizeof(GLfloat)));
+			glVertexAttribPointer(VERTEX_INDEX,3,GL_FLOAT,GL_FALSE,VERTEX_SIZE, (const GLvoid*)offsetof(VertexData, VertexData::vertex));
+			glVertexAttribPointer(COLOR_INDEX, 4, GL_UNSIGNED_BYTE, GL_TRUE, VERTEX_SIZE, (const GLvoid*)offsetof(VertexData,VertexData::color));
 			glEnableVertexAttribArray(VERTEX_INDEX);
 			glEnableVertexAttribArray(COLOR_INDEX);
 
@@ -52,20 +52,27 @@ namespace LocalProject1 {
 			maths::vec2 size = renderable->getSize();
 			maths::vec4 col = renderable->getColor();
 
+			int r = col.x * 255;
+			int g = col.y * 255;
+			int b = col.z * 255;
+			int a = col.w * 255;
+
+			unsigned int c = a << 24 | b << 16 | g << 8 | r;
+
 			m_Buffer->vertex = pos;
-			m_Buffer->color = col;
+			m_Buffer->color = c;
 			m_Buffer++;
 
 			m_Buffer->vertex = maths::vec3(pos.x,pos.y+size.y,pos.z);
-			m_Buffer->color = col;
+			m_Buffer->color = c;
 			m_Buffer++;
 
 			m_Buffer->vertex = maths::vec3(pos.x+size.x, pos.y + size.y, pos.z);
-			m_Buffer->color = col;
+			m_Buffer->color = c;
 			m_Buffer++;
 
 			m_Buffer->vertex = maths::vec3(pos.x + size.x, pos.y, pos.z);
-			m_Buffer->color = col;
+			m_Buffer->color = c;
 			m_Buffer++;
 
 			m_IndexCount += 6;
@@ -81,6 +88,7 @@ namespace LocalProject1 {
 		}
 
 		void Packed2DRenderer::flush() {
+			glClear(GL_COLOR_BUFFER_BIT);
 			glBindVertexArray(m_VAO);
 			m_IBO->bind();
 			glDrawElements(GL_TRIANGLES, m_IndexCount, GL_UNSIGNED_SHORT, 0);

@@ -61,8 +61,7 @@ namespace LocalProject1
 
 			m_GLContext = SDL_GL_CreateContext(m_Window);
 
-			SDL_GL_SetSwapInterval(1);
-
+			
 			if (!m_GLContext) {
 				std::cout << "Failed to initialaze Open GL!" << std::endl;
 			}
@@ -74,7 +73,7 @@ namespace LocalProject1
 			glViewport(0, 0, m_Width, m_Height);
 
 			/*glEnable(GL_DEPTH_TEST);*/ /*не забудь включить если надо будет*/
-			SDL_GL_SetSwapInterval(1);
+			SDL_GL_SetSwapInterval(0);
 
 			if (!SDL_GetError() == NULL)
 				std::cout << "Success!" << std::endl;
@@ -142,8 +141,5 @@ namespace LocalProject1
 			Window::mX = event.x;
 			Window::mY = event.y;
 		}
-
-
-
 	}
 }

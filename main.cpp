@@ -17,13 +17,7 @@
 #include "time.h"
 #include "src/utils/timer.h"
 
-
-
-
 #define PACKED_RENDERER 1
-
-
-
 
 using namespace LocalProject1;
 using namespace maths;
@@ -84,7 +78,11 @@ int main(int argc, char* argv[]) {
     float t = 0;
     long frames = 0;
     while (!window.closed()) {
-        timer.reset();
+        //timer.reset();
+        //mat4 mat = mat4::translation(vec3(1, 1, 1));
+        //mat *= mat4::translation(vec3(-3, -2, -1));
+        mat4 mat = mat4::rotation(timer.elapsed() * 100.0f, vec3(0, 0, 1));
+        shader.setUniformMat4f("ml_matrix",mat);
         window.getMousePosition(x, y);
 
         shader.setUniform2f("light_pos", vec2(
@@ -111,6 +109,5 @@ int main(int argc, char* argv[]) {
         /*printf("%f ms\r\n", timer.elapsed() * 1000);*/
         window.update();
     }
-
     return 0;
 }

@@ -6,4 +6,8 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\minwindef.h(1
       см. предыдущее определение "APIENTRY"
   
 C:\Users\HP\source\repos\LocalProject1\LocalProject1\main.cpp(50,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  window.cpp
+C:\Users\HP\source\repos\LocalProject1\LocalProject1\src\graphics\window.cpp(88,22): warning C4804: >: небезопасное использование типа "bool" в операции
+C:\Users\HP\source\repos\LocalProject1\LocalProject1\src\graphics\window.cpp(93,29): warning C4804: >: небезопасное использование типа "bool" в операции
+  Создание кода...
   LocalProject1.vcxproj -> C:\Users\HP\source\repos\LocalProject1\x64\Debug\LocalProject1.exe

@@ -29,15 +29,18 @@ namespace LocalProject1 {
 
 		mat4& mat4::multiply(const mat4& other) {
 			float sum;
+			float data[16];
 			for (int y = 0; y < 4; y++) {
 				for (int x = 0; x < 4; x++) {
 					sum = 0.0f;
 					for (int e = 0; e < 4; e++) {
 						sum += elements[x + e * 4] * other.elements[e + y * 4];
 					}
-					elements[x + y * 4] = sum;
+					data[x + y * 4] = sum;
 				}
 			}
+			memcpy(elements, data, 4 * 4 * sizeof(float));
+
 			return *this;
 		}
 
@@ -97,17 +100,17 @@ namespace LocalProject1 {
 			float z = axis.z;
 
 
-			result.elements[1 + 0 * 4] = x * omc + c;
+			result.elements[0 + 0 * 4] = x * omc + c;
 			result.elements[1 + 0 * 4] = y * x * omc + z * s;
-			result.elements[2 + 0 * 4] = z * x * omc - y * s;
+			result.elements[2 + 0 * 4] = x * z * omc - y * s;
 
-			result.elements[1 + 1 * 4] = x * y * omc - z * s;
+			result.elements[0 + 1 * 4] = x * y * omc - z * s;
 			result.elements[1 + 1 * 4] = y * omc + c;
-			result.elements[2 + 1 * 4] = z * z * omc - x * s;
+			result.elements[2 + 1 * 4] = y * z * omc + x * s;
 
-			result.elements[1 + 2 * 4] = x * z * omc + y * s;
-			result.elements[1 + 2 * 4] = y * x * omc - x * s;
-			result.elements[2 + 2 * 4] = z * omc - c;
+			result.elements[0 + 2 * 4] = x * z * omc + y * s;
+			result.elements[1 + 2 * 4] = y * z * omc - x * s;
+			result.elements[2 + 2 * 4] = z * omc + c;
 
 
 			return result;

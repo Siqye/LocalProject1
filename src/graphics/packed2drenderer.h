@@ -3,6 +3,8 @@
 #include "buffers/vertexarray.h"
 #include "buffers/indexbuffer.h"
 #include "constsprite.h"
+#include <cstddef>
+
 
 #define MAX_SPRITES		10000
 #define VERTEX_SIZE		sizeof(VertexData)
